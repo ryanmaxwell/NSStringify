@@ -19,5 +19,5 @@ NSMutableString * concatenateObjectDescriptions(id firstObject, ...);
 #endif
 
 #ifndef NSLogify
-    #define NSLogify(...)               NSLog(@"%@", concatenateObjectDescriptions(__VA_ARGS__, nil))
+    #define NSLogify(...)              NSLog(@"%@", concatenateObjectDescriptions(__VA_ARGS__, nil))
 #endif
