@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-NSString * concatenate_object_descriptions(id firstObject, ...);
+NSMutableString * concatenateObjectDescriptions(id firstObject, ...);
 
-#define NSStringify(...)    concatenate_object_descriptions(__VA_ARGS__, nil)
-#define NSLogify(...)       NSLog(@"%@", concatenate_object_descriptions(__VA_ARGS__, nil))
+#ifndef NSStringify
+    #define NSStringify(...)           [NSString stringWithString:concatenateObjectDescriptions(__VA_ARGS__, nil)]
+#endif
+
+#ifndef NSMutableStringify
+    #define NSMutableStringify(...)    concatenateObjectDescriptions(__VA_ARGS__, nil)
+#endif
+
+#ifndef NSLogify
+    #define NSLogify(...)               NSLog(@"%@", concatenateObjectDescriptions(__VA_ARGS__, nil))
+#endif

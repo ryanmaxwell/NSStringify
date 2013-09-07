@@ -8,7 +8,7 @@
 
 #import "NSStringify.h"
 
-NSString * concatenate_object_descriptions(id firstObject, ...) {
+NSMutableString * concatenateObjectDescriptions(id firstObject, ...) {
     
     NSMutableString *result = [NSMutableString string];
     
@@ -19,5 +19,5 @@ NSString * concatenate_object_descriptions(id firstObject, ...) {
     }
     va_end(args);
     
-    return [NSString stringWithString:result];
+    return result;
 }
