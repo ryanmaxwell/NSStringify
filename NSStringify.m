@@ -19,5 +19,5 @@ NSString * concatenate_object_descriptions(id firstObject, ...) {
     }
     va_end(args);
     
-    return [result copy];
+    return [NSString stringWithString:result];
 }
