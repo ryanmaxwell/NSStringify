@@ -6,12 +6,12 @@ Some NSString preprocessor abuse.
 ## NSStringify(...)
 
 Simply concatenate some objects into a string, using the `description` method.
-
-Arguably more readable/convenient than `[NSString stringWithFormat:@"%@", object]`.
+Arguably more readable/convenient than `[NSString stringWithFormat:@"%@ %@", obj1, obj2]`.
 
 ## NSLogify(...)
 
-NSStringify's the arguments, and NSLog's the result.
+NSStringify's the arguments, and NSLog's the result. 
+Definitely more convenient than NSLog(@"%@ %@", obj1, obj2).
 
 e.g.
 
